@@ -1,0 +1,18 @@
+@use "./common";
+
+.header-title {
+    margin-left: 12px;
+    padding: 12px;
+    font-weight: bold;
+    width: 380px;
+    border-radius: 6px;
+    &:hover {
+        color: #fff;
+        background-color: #000;
+        margin-left: 24px;
+        transition: ease-in-out 0.2s;
+        transition-timing-function: linear;
+        transition-duration: 0.7s;
+        transition-delay: 0.025s;
+    }
+}

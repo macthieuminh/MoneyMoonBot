@@ -1,0 +1,10 @@
+.container {
+    margin-top: 24px;
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    .row {
+        margin-top: 4px;
+    }
+}

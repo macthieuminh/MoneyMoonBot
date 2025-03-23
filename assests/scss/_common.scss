@@ -1,0 +1,51 @@
+%lighttheme {
+    color: #000;
+    background-color: #fff;
+}
+%darktheme {
+    color: #fff;
+    background-color: #000;
+}
+@mixin getTheme($themes) {
+}
+body {
+    // preset
+    -moz-user-select: none !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    // Styles
+    font-family: "JetBrains Mono", monospace;
+    font-style: normal;
+
+    margin-top: 12px;
+    height: 80vh;
+}
+.main {
+    position: relative;
+}
+%center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.hightlight {
+    display: inline-block;
+    height: 24px;
+    padding: 2px 6px;
+    border-radius: 4px;
+
+    color: #ccc;
+    background-color: #000;
+    &:hover {
+        color: #000;
+        background-color: #ccc;
+        transition: ease-in-out 0.5s;
+    }
+}
+.underline {
+    text-decoration: underline;
+}
