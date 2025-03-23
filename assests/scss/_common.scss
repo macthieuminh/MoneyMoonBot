@@ -20,9 +20,6 @@ body {
     // Styles
     font-family: "JetBrains Mono", monospace;
     font-style: normal;
-
-    margin-top: 12px;
-    height: 80vh;
 }
 .main {
     position: relative;
@@ -31,6 +28,7 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
 .hightlight {
     display: inline-block;
@@ -48,4 +46,25 @@ body {
 }
 .underline {
     text-decoration: underline;
+}
+.item {
+    border-radius: 10px;
+    background-color: orange;
+    padding: 10px;
+}
+.center {
+    @extend %center;
+}
+.mt-32 {
+    margin-top: 32px;
+}
+.mb-32 {
+    margin-bottom: 32px;
+}
+.mb-18 {
+    margin-bottom: 18px;
+}
+.avatar {
+    height: 128px;
+    width: 128px;
 }
