@@ -1,16 +1,23 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
     text-align: center;
     justify-content: center;
     align-content: center;
 
-    font-style: italic;
-    font-weight: 600;
     color: #ccc;
     background-color: #000;
-
-    height: 32px;
+    width: 100%;
+    padding: 10px;
+}
+.signature {
+    margin-top: 8px;
+    font-style: italic;
+    text-decoration: line-through;
+}
+.quotes {
+    margin-top: 8px;
+    font-weight: bold;
+}
+.authors {
+    margin-top: 10px;
+    font-weight: 400;
 }

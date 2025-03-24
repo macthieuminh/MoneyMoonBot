@@ -1,7 +1,6 @@
 .container {
-    margin-top: 24px;
+    position: relative;
     min-height: 100vh; /* will cover the 100% of viewport */
     overflow: hidden;
     display: block;
-    position: relative;
 }

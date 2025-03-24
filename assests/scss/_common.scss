@@ -20,9 +20,14 @@ body {
     // Styles
     font-family: "JetBrains Mono", monospace;
     font-style: normal;
-}
-.main {
     position: relative;
+}
+section {
+    margin: 10px 0;
+}
+
+.main {
+    margin-top: 20px;
 }
 %center {
     text-align: center;
@@ -50,7 +55,7 @@ body {
 .item {
     border-radius: 10px;
     background-color: orange;
-    padding: 10px;
+    padding: 14px;
 }
 .center {
     @extend %center;

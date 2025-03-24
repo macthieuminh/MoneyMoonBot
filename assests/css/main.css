@@ -51,10 +51,15 @@ body {
   user-select: none !important;
   font-family: "JetBrains Mono", monospace;
   font-style: normal;
+  position: relative;
+}
+
+section {
+  margin: 10px 0;
 }
 
 .main {
-  position: relative;
+  margin-top: 20px;
 }
 
 .center {
@@ -85,7 +90,7 @@ body {
 .item {
   border-radius: 10px;
   background-color: orange;
-  padding: 10px;
+  padding: 14px;
 }
 
 .mt-32 {
@@ -1366,11 +1371,14 @@ body {
   }
 }
 .container {
-  margin-top: 24px;
+  position: relative;
   min-height: 100vh; /* will cover the 100% of viewport */
   overflow: hidden;
   display: block;
-  position: relative;
+}
+
+header {
+  margin: 12px 0 0 12px;
 }
 
 .header-title {
@@ -1391,17 +1399,29 @@ body {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   text-align: center;
   justify-content: center;
   align-content: center;
-  font-style: italic;
-  font-weight: 600;
   color: #ccc;
   background-color: #000;
-  height: 32px;
+  width: 100%;
+  padding: 10px;
+}
+
+.signature {
+  margin-top: 8px;
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.quotes {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.authors {
+  margin-top: 10px;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=main.css.map */
