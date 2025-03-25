@@ -1,7 +1,6 @@
 @use "sass:map";
 @use "sass:math";
-
-// Grid System
+// Grid Breakpoints & Container Widths
 $grid-breakpoints: (
     xs: 0,
     sm: 576px,
@@ -10,7 +9,6 @@ $grid-breakpoints: (
     xl: 1200px,
     xxl: 1400px,
 );
-
 $container-max-widths: (
     sm: 540px,
     md: 720px,
@@ -18,10 +16,9 @@ $container-max-widths: (
     xl: 1140px,
     xxl: 1320px,
 );
-
 $grid-columns: 12;
 $grid-gutter-width: 30px !default;
-
+// Gutters
 $gutters: (
     0: 0,
     1: 0.25,
@@ -30,33 +27,32 @@ $gutters: (
     4: 1.5,
     5: 3,
 );
-
 %gutter-padding {
-    padding-left: calc(var(--grid-gutter-x) * 5);
-    padding-right: calc(var(--grid-gutter-x) * 5);
+    padding-left: $grid-gutter-width * 0.5;
+    padding-right: $grid-gutter-width * 0.5;
 }
+// Container
 .container-fluid {
-    --grid-gutter-x: #{$grid-gutter-width};
-    --grid-gutter-y: #{$grid-gutter-width};
     width: 100%;
+
     margin-left: auto;
     margin-right: auto;
+
     @extend %gutter-padding;
 }
 .container {
     @extend .container-fluid;
 }
-
 .row {
     display: flex;
     flex-wrap: wrap;
 
-    margin-top: calc(var(--grid-gutter-y) * -1);
-    padding-left: calc(var(--grid-gutter-x) * 5);
-    padding-right: calc(var(--grid-gutter-x) * 5);
+    margin-left: -calc($grid-gutter-width * 0.5);
+    margin-right: -calc($grid-gutter-width * 0.5);
 
-    &[class*="row-cols"] > *,
+    &[class*="row-cols-"] > *,
     [class*="col-"] {
+        flex: 0 0 auto;
         @extend %gutter-padding;
     }
 
@@ -66,7 +62,10 @@ $gutters: (
 }
 .col {
     flex: 1 0;
+
+    @extend %gutter-padding;
 }
+// Mixins
 @mixin make-media-query($dimension, $bypass: false) {
     @if $bypass {
         @content;
@@ -76,54 +75,64 @@ $gutters: (
         }
     }
 }
-@mixin make-row-columns($inflix) {
+@mixin make-container-max-widths($breakpoint) {
+    @each $container, $dimension in $container-max-widths {
+        @if (#{$container} == #{$breakpoint}) {
+            max-width: $dimension;
+        }
+    }
+}
+@mixin make-row-columns($infix) {
     @for $i from 1 through $grid-columns {
-        .row-cols#{$inflix}-#{$i} {
-            flex: 0 0 auto;
+        .row-cols#{$infix}-#{$i} > * {
             width: math.div(100%, $i);
         }
     }
 }
-@mixin make-columns($inflix) {
+@mixin make-columns($infix) {
     @for $i from 1 through $grid-columns {
-        .col#{$inflix}-#{$i} {
-            flex: 0 0 auto;
+        .col#{$infix}-#{$i} {
             width: math.div(100%, $grid-columns) * $i;
         }
     }
 }
-@mixin make-offsets($inflix) {
+@mixin make-offset($infix) {
     @for $i from 0 to $grid-columns {
-        .offset#{$inflix}-#{$i} {
+        .offset#{$infix}-#{$i} {
             margin-left: if($i > 0, math.div(100%, $grid-columns) * $i, 0);
         }
     }
 }
-@mixin make-gutter($infix) {
+@mixin make-gutters($infix) {
     @each $i, $ratio in $gutters {
-        .g#{$infix}-#{$i} {
-            --grid-gutter-x: #{$grid-gutter-width * $ratio};
-            --grid-gutter-y: #{$grid-gutter-width * $ratio};
-        }
+        .g#{$infix}-#{$i},
         .gx#{$infix}-#{$i} {
             --grid-gutter-x: #{$grid-gutter-width * $ratio};
         }
+
+        .g#{$infix}-#{$i},
         .gy#{$infix}-#{$i} {
             --grid-gutter-y: #{$grid-gutter-width * $ratio};
         }
     }
 }
+// Grid Parts
+// Each
 @each $breakpoint, $dimension in $grid-breakpoints {
-    $max-width: map.get($container-max-widths, $breakpoint);
-    $isXS: $breakpoint == xs;
-    $inflix: if($isXS, "", "-#{$breakpoint}");
+    $isXS: if($breakpoint == xs, true, false);
+    $infix: if($isXS, "", "-#{$breakpoint}");
+    $max-width: map.get(
+        $map: $container-max-widths,
+        $key: $breakpoint,
+    );
+
     @include make-media-query($dimension, $isXS) {
         .container {
             max-width: $max-width;
         }
-        @include make-row-columns($inflix);
-        @include make-columns($inflix);
-        @include make-offsets($inflix);
-        @include make-gutter($inflix);
+        @include make-row-columns($infix);
+        @include make-columns($infix);
+        @include make-offset($infix);
+        @include make-gutters($infix);
     }
 }

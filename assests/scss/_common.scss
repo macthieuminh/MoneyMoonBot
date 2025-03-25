@@ -6,8 +6,15 @@
     color: #fff;
     background-color: #000;
 }
-@mixin getTheme($themes) {
+.center {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
 }
+.mt-32 {
+    margin-top: 32px;
+}
+// Main
 body {
     // preset
     -moz-user-select: none !important;
@@ -22,19 +29,19 @@ body {
     font-style: normal;
     position: relative;
 }
-section {
-    margin: 10px 0;
-}
-
-.main {
-    margin-top: 20px;
-}
-%center {
+.hightlight {
     text-align: center;
     justify-content: center;
-    align-items: center;
     align-content: center;
 }
+// Item
+.item {
+    min-height: 84px;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 8px;
+}
+// Texts
 .hightlight {
     display: inline-block;
     height: 24px;
@@ -46,30 +53,14 @@ section {
     &:hover {
         color: #000;
         background-color: #ccc;
-        transition: ease-in-out 0.5s;
+        transition: ease-in-out 0.25s;
     }
 }
 .underline {
     text-decoration: underline;
 }
-.item {
-    border-radius: 10px;
-    background-color: orange;
-    padding: 14px;
-}
-.center {
-    @extend %center;
-}
-.mt-32 {
-    margin-top: 32px;
-}
-.mb-32 {
-    margin-bottom: 32px;
-}
-.mb-18 {
-    margin-bottom: 18px;
-}
+// Icon & Avatar
 .avatar {
-    height: 128px;
     width: 128px;
+    height: 128px;
 }

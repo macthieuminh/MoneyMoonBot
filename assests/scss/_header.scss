@@ -1,12 +1,8 @@
 @use "./common";
-header {
-    margin: 12px 0 0 12px;
-}
+
 .header-title {
-    margin-left: 12px;
     padding: 12px;
     font-weight: bold;
-    width: 380px;
     border-radius: 6px;
     &:hover {
         color: #fff;
@@ -17,4 +13,8 @@ header {
         transition-duration: 0.7s;
         transition-delay: 0.025s;
     }
+}
+
+.banner {
+    margin-bottom: 18px;
 }
