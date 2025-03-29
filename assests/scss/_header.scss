@@ -1,20 +1,33 @@
 @use "./common";
 
 .header-title {
+    font-size: 1.8rem;
     padding: 12px;
     font-weight: bold;
     border-radius: 6px;
     &:hover {
         color: #fff;
         background-color: #000;
-        margin-left: 24px;
+        margin-left: 10px;
         transition: ease-in-out 0.2s;
         transition-timing-function: linear;
-        transition-duration: 0.7s;
+        transition-duration: 0.5s;
         transition-delay: 0.025s;
     }
 }
 
 .banner {
     margin-bottom: 18px;
+
+    .banner-title {
+        margin-top: 1.8rem;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+    .banner-desc {
+        margin: 1.8rem 0;
+        font-size: 1rem;
+        color: #858481;
+        font-weight: 400;
+    }
 }

@@ -28,6 +28,19 @@ body {
     font-family: "JetBrains Mono", monospace;
     font-style: normal;
     position: relative;
+    font-size: 10px;
+    // Background
+    background: url(../img/background.png);
+}
+.separate {
+    width: 100%;
+    height: 1px;
+    border: none;
+    margin: 10px 0;
+    background: #ebebeb;
+}
+.blur {
+    backdrop-filter: blur(10px);
 }
 .hightlight {
     text-align: center;
@@ -36,10 +49,10 @@ body {
 }
 // Item
 .item {
-    min-height: 84px;
     background-color: orange;
     padding: 10px;
     border-radius: 8px;
+    font-size: 1rem;
 }
 // Texts
 .hightlight {
