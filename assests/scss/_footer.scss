@@ -1,17 +1,25 @@
 @use "./common";
 .footer {
-    color: #ccc;
-    background-color: #000;
-    padding-bottom: 10px;
+    padding: 10px 0;
+    color: #000;
+    background-color: #fff;
     @extend .center;
 }
 .signature {
-    margin-top: 0.8rem;
+    margin-top: 18px;
+    font-size: 1rem;
+    font-weight: 400;
     font-style: italic;
+    margin-bottom: 18px;
 }
 .quotes {
+    font-size: 1rem;
     font-weight: bold;
 }
-.authors {
-    font-weight: 400;
+
+.social_icon {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    margin-right: 18px;
 }

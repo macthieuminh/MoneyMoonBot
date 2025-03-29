@@ -85,10 +85,32 @@ body {
 }
 
 .item {
-  background-color: orange;
+  min-height: 70px;
   padding: 10px;
   border-radius: 8px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: orange;
+}
+.item:hover {
+  background-color: rgba(133, 132, 129, 0.5);
+  transition: ease-in-out 0.25s;
+}
+
+.btn {
+  height: 42px;
+  min-width: 140px;
+  font-size: 1.3rem;
+  color: #fff;
+  background: rgb(2, 0, 36);
+  border-radius: 8px;
+  margin-top: 40px;
+}
+.btn:hover {
+  font-size: 1.4rem;
+  color: #ccc;
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 35%, rgb(0, 212, 255) 100%);
+  transition: ease-in-out 2s;
 }
 
 .hightlight {
@@ -1309,22 +1331,16 @@ body {
   justify-content: center;
 }
 
-.comming_soon {
-  margin-top: 20px;
-  font-size: 1.1rem;
-  font-style: italic;
-}
-
 .header-title {
-  font-size: 1.8rem;
-  padding: 12px;
+  font-size: 1.4rem;
+  padding: 8px;
   font-weight: bold;
   border-radius: 6px;
 }
 .header-title:hover {
   color: #fff;
   background-color: #000;
-  margin-left: 10px;
+  translate: 10px;
   transition: ease-in-out 0.2s;
   transition-timing-function: linear;
   transition-duration: 0.5s;
@@ -1347,22 +1363,29 @@ body {
 }
 
 .footer {
-  color: #ccc;
-  background-color: #000;
-  padding-bottom: 10px;
+  padding: 10px 0;
+  color: #000;
+  background-color: #fff;
 }
 
 .signature {
-  margin-top: 0.8rem;
+  margin-top: 18px;
+  font-size: 1rem;
+  font-weight: 400;
   font-style: italic;
+  margin-bottom: 18px;
 }
 
 .quotes {
+  font-size: 1rem;
   font-weight: bold;
 }
 
-.authors {
-  font-weight: 400;
+.social_icon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  margin-right: 18px;
 }
 
 /*# sourceMappingURL=main.css.map */

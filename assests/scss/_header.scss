@@ -1,14 +1,14 @@
 @use "./common";
 
 .header-title {
-    font-size: 1.8rem;
-    padding: 12px;
+    font-size: 1.4rem;
+    padding: 8px;
     font-weight: bold;
     border-radius: 6px;
     &:hover {
         color: #fff;
         background-color: #000;
-        margin-left: 10px;
+        translate: 10px;
         transition: ease-in-out 0.2s;
         transition-timing-function: linear;
         transition-duration: 0.5s;

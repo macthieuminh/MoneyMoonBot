@@ -49,10 +49,34 @@ body {
 }
 // Item
 .item {
-    background-color: orange;
+    min-height: 70px;
     padding: 10px;
     border-radius: 8px;
     font-size: 1rem;
+    border: 1px solid #ccc;
+    background-color: orange;
+
+    &:hover {
+        background-color: rgba($color: #858481, $alpha: 0.5);
+        transition: ease-in-out 0.25s;
+    }
+}
+.btn {
+    height: 42px;
+    min-width: 140px;
+
+    font-size: 1.3rem;
+    color: #fff;
+    background: rgb(2, 0, 36);
+    border-radius: 8px;
+    margin-top: 40px;
+
+    &:hover {
+        font-size: 1.4rem;
+        color: #ccc;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+        transition: ease-in-out 2s;
+    }
 }
 // Texts
 .hightlight {
